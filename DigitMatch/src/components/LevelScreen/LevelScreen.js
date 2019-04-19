@@ -3,6 +3,7 @@ import { View, AsyncStorage } from 'react-native';
 import StatsBlock from './StatsBlock';
 import CoordinateGrid from './CoordinateGrid';
 
+// Create screen for a level
 export default class LevelScreen extends React.Component {
 
     constructor(props) {

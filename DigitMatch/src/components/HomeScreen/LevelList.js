@@ -10,6 +10,7 @@ export default class LevelList extends React.PureComponent {
     }
 }
 
+// Create screen for list of LevelBlocks
 class LevelListScreen extends React.PureComponent {
     static navigationOptions = {
         title: 'LEVELS',

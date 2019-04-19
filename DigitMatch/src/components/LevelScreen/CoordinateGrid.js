@@ -2,6 +2,7 @@ import React from 'react';
 import { View, Text, TouchableOpacity, Alert } from 'react-native';
 import { FlatGrid } from 'react-native-super-grid';
 
+// Create custom game for each level
 export default class CoordinateGrid extends React.Component {
     constructor(props) {
         super(props);
@@ -30,6 +31,21 @@ export default class CoordinateGrid extends React.Component {
             numberList = this.resetCoordinateGrid();
             this.setState({ numbers: numberList })
             this.props.parent.setState({ resetPressed: false });
+        }
+    }
+
+    componentWillReceiveProps() {
+        const levelNum = this.props.levelNum
+        dataLength = levelViews[levelNum - 1].data.length
+        win = true;
+        const indexes = levelViews[levelNum - 1].data;
+        for (let i = 1; i < dataLength; i++) {
+            if (this.state.numbers[indexes[i]] != this.state.numbers[indexes[i - 1]]) {
+                win = false
+            }
+        }
+        if (win) {
+            this.updateWin();
         }
     }
 
@@ -153,17 +169,6 @@ export default class CoordinateGrid extends React.Component {
         }
 
         this.renderItems(levelNum, rowColNum, renderStyles.blockStyle)
-        dataLength = levelViews[levelNum - 1].data.length
-        win = true;
-        const indexes = levelViews[levelNum - 1].data;
-        for (let i = 1; i < dataLength; i++) {
-            if (this.state.numbers[indexes[i]] != this.state.numbers[indexes[i - 1]]) {
-                win = false
-            }
-        }
-        if (win) {
-            this.updateWin();
-        }
 
         return (
             <View style={renderStyles.containerStyle}>

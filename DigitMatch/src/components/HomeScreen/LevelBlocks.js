@@ -1,6 +1,7 @@
 import React from 'react';
 import { Text, TouchableOpacity } from 'react-native';
 
+// Create a view for level block
 export default class LevelBlocks extends React.Component {
 
     render() {

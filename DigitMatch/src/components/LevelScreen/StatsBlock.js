@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 
+// Create view containing user stats
 export default class StatsBlock extends React.Component {
     render() {
         return (
@@ -15,6 +16,7 @@ export default class StatsBlock extends React.Component {
       } 
 }
 
+// Create view holding number of moves user has made
 class MovesBlock extends React.Component {
   render() {
     return (
@@ -27,6 +29,7 @@ class MovesBlock extends React.Component {
   }
 }
 
+// Create view holding least number of moves per level
 class BestBlock extends React.Component {
   render() {
     return(
@@ -39,6 +42,7 @@ class BestBlock extends React.Component {
   }
 }
 
+// Create button to reset level
 class ResetButton extends React.Component {
   render() {
     return (
