@@ -11,6 +11,7 @@ export default class CoordinateGrid extends React.Component {
     }
 
     resetCoordinateGrid() {
+        this.props.parent.setState({moves: 0})
         const numberList = [];
         const rowColNum = levelViews[this.props.levelNum - 1].rowCol.num
         num = Math.floor(Math.random() * 4) + 1;
